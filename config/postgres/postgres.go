@@ -1,11 +1,12 @@
 package postgres
 
 import (
+	"os"
+	"self-payrol/model"
+
 	"github.com/rs/zerolog/log"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	"os"
-	"self-payrol/model"
 )
 
 func InitGorm() *gorm.DB {

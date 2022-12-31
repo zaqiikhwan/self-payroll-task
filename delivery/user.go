@@ -149,5 +149,4 @@ func (p *userDelivery) WithdrawHandler(c echo.Context) error {
 	}
 
 	return helper.ResponseSuccessJson(c, "Success withdraw salary", "")
-
 }

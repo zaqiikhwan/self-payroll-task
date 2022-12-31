@@ -4,9 +4,9 @@ import validation "github.com/go-ozzo/ozzo-validation"
 
 type (
 	CompanyRequest struct {
-		Name    string `json:"name" validate:"required"`
-		Balance int    `json:"balance" validate:"required"`
-		Address string `json:"address" validate:"required"`
+		Name    string `json:"name"`
+		Balance int    `json:"balance"`
+		Address string `json:"address"`
 	}
 
 	TopupCompanyBalance struct {
@@ -14,8 +14,7 @@ type (
 	}
 )
 
-// TODO: tuliskan validasi untuk CompanyRequest dengan rule semua field required
-
+// TODO: tuliskan validasi untuk CompanyRequest dengan rule semua field required (Done)
 func (req TopupCompanyBalance) Validate() error {
 	return validation.ValidateStruct(
 		&req,

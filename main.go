@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/joho/godotenv"
-	"github.com/labstack/gommon/log"
 	"self-payrol/config"
 	"sync"
+
+	"github.com/joho/godotenv"
+	"github.com/labstack/gommon/log"
 )
 
 func main() {
@@ -14,8 +15,12 @@ func main() {
 	}
 	log.Infof("read .env from file")
 
+	// fmt.Println(os.Getenv("DATABASE_URL"))
+
 	config := config.NewConfig()
+	// fmt.Println(config)
 	server := InitServer(config)
+	// server.Run()
 
 	wg := sync.WaitGroup{}
 

@@ -3,9 +3,10 @@ package usecase
 import (
 	"context"
 	"errors"
-	"gorm.io/gorm"
 	"self-payrol/model"
 	"self-payrol/request"
+
+	"gorm.io/gorm"
 )
 
 type userUsecase struct {
@@ -29,7 +30,6 @@ func (p *userUsecase) WithdrawSalary(ctx context.Context, req *request.WithdrawR
 	}
 
 	notes := user.Name + " withdraw salary "
-
 	err = p.companyRepo.DebitBalance(ctx, user.Position.Salary, notes)
 	if err != nil {
 		return err
